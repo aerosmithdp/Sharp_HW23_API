@@ -1,11 +1,8 @@
 using System.Collections.Generic;
 using RestSharp;
 using OpenQA.Selenium;
-
-
-using Xunit;
 using OpenQA.Selenium.Chrome;
-using System.Threading;
+using Xunit;
 using System.IO;
 
 namespace Sharp_HW23_API
@@ -66,10 +63,10 @@ namespace Sharp_HW23_API
         [Fact]
         public void Test3()
         {
-            var client = new RestClient("https://clip2net.com/clip/m566236/jjjk3/1643326942-f042f-6kb.jpg");
+            var client = new RestClient("http://clip2net.com/clip/m566236/1643363250-62a5a-6kb.png");
             var request = new RestRequest(Method.GET);
             byte[] downloaded = client.DownloadData(request);
-            File.WriteAllBytes(Path.Combine("C:/Users/User/Desktop", "nyancat.jpg"), downloaded);
+            File.WriteAllBytes(Path.Combine("/Users/User/Desktop", "nyancat.png"), downloaded);
         }
 
 
